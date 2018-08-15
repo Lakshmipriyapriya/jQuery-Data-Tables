@@ -7,7 +7,7 @@
 	 <link rel="stylesheet" href="./bootstrap/css/bootstrap 4.1.css">
      <link rel="stylesheet" href="./DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
   	 <script src="./bootstrap/js/jquery.min.js"></script>
-  	   	 <script src="./DataTables-1.10.18/js/jquery.dataTables.js"></script>
+  	 <script src="./DataTables-1.10.18/js/jquery.dataTables.js"></script>
   	 <script src="./DataTables-1.10.18/js/dataTables.bootstrap4.js"></script>
 </head>
 <style>
@@ -16,7 +16,7 @@
 	}
 </style>
 <body>
-		<form method="post" action="/postTask">
+		
 <table id="TaskList" class="table table-striped table-hover table-bordered">
 	<thead>
 		<tr>
@@ -28,55 +28,59 @@
 	</thead>
 	<tbody>
 		<tr>
-			<td>Buy Soaps</td>
-			<td>Buy Soaps in local grocery shop</td>
-			<td>Open</td>
-			<td>06-08-2018</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
 		</tr>
 		<tr>
-			<td>Buy Milk</td>
-			<td>Buy Milk in local grocery shop</td>
-			<td>Open</td>
-			<td>06-08-2018</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
 		</tr>
 		<tr>
-			<td>Buy Stationaries</td>
-			<td>Buy Pencils, Pens in local grocery shop</td>
-			<td>Open</td>
-			<td>06-08-2018</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
 		</tr>
 		<tr>
-			<td>Buy a Shelf</td>
-			<td>Buy a shelf in local furniture shop</td>
-			<td>Open</td>
-			<td>06-08-2018</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
 		</tr>
 		<tr>
-			<td>Buy clothes</td>
-			<td>Buy Clothes in local shop</td>
-			<td>Open</td>
-			<td>06-08-2018</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
 		</tr>
 		<tr>
-			<td>Buy oil</td>
-			<td>Buy oil in local grocery shop</td>
-			<td>Open</td>
-			<td>06-08-2018</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
 		</tr>	
 	</tbody>
 </table>
 <button class="btn btn-primary">
 	Save
 </button>
-</form>
 <script>
 	jQuery(document).ready(function(){
 		jQuery("#TaskList").DataTable({
-			"processing": true,
+			"processing":true ,
         "serverSide": true,
-        "ajax":({url:"/postTask",method:"post"});
-		});
-	});
+        "ajax":({
+        		url:"/all", 
+        		method: "get",
+        		dataType:"json",
+      			contentType: "application/json; charset=utf-8"
+            });
+	    });
+	 });   
 </script>
 </body>
 </html>

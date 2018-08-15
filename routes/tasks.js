@@ -6,6 +6,9 @@ router.get('/hai', function(req, res, next) {
 });
 var tasks=require('../src/resources/tasks_operations');
 router.post('/',function(req,res,next){
-  	 tasks.createMyTaskDetails(req,res)
+  	 tasks.createMyTaskDetails(req,res);
   	 });
+router.get('/all',function(req,res){
+	tasks.getMyTaskDetails(req,res);
+});
 module.exports =router;

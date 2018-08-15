@@ -1,13 +1,15 @@
 var express = require('express');
 var router = express.Router();
-router.get('/data', function(request, response, next) {
+var tasks=require('../src/resources/tasks_operations');
+router.get('/', function(request, response, next) {
 	response.writeHead(302, {
 	  'Location': '/Task-List.html'
 	});
 	response.end();
 });
-router.post('/postTask',function(req,res){
-	res.send('saved');
-}); 
-
+router.post('/',function(req,res,next){
+	var data=req.body;
+	console.log("table data : ",data);
+  	 tasks.createMyTaskDetails(req,res)
+  	 });
 module.exports = router;

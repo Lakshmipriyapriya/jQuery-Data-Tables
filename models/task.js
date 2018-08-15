@@ -1,19 +1,19 @@
 var mongoose= require('mongoose');
 var Schema= mongoose.Schema;
 var Task=new Schema({
-	 Title:  { 
+	 title:  { 
 	type: String,
 	index: true
   },
-  Description:  { 
+  description:  { 
 	type: String,
 	index: true
   },
-  Status:  { 
+  status:  { 
 	type: String,
 	index: true
   },
-   CreatedOn:  { 
+   createdOn:  { 
 	type: Date,
 	default: Date.Now	
   }
