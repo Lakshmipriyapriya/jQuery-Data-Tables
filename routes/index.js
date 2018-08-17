@@ -12,4 +12,7 @@ router.post('/',function(req,res,next){
 	console.log("table data : ",data);
   	 tasks.createMyTaskDetails(req,res)
   	 });
+router.get('/all',function(req,res){
+	tasks.getMyTaskDetails(req,res);
+});
 module.exports = router;
