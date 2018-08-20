@@ -52,16 +52,20 @@ var getMyTaskDetailsInArray = function (req,res){
 	return Task.find(function(error,tasks){
 		idForOperation = tasks._id;
 		var getDataFromDb=tasks.map (function getAllDetails(tasks,index){
-			var taskData=[tasks.title,tasks.description];
+			var taskData=[tasks.title,tasks.description,tasks.status];
 			return taskData;
 		});
-		
+
 		var getDataFromDataTable = {
-			data:[getDataFromDb]
+			draw:1,
+			recordsTotal: tasks.length,
+			recordsFiltered: tasks.length, 
+			data:getDataFromDb
 		}
-      console.log("TaskList created");
-      res.send(getDataFromDb);	
-	})	
+      console.log("TaskList created", getDataFromDataTable);
+      res.send(getDataFromDataTable);	
+	})
+		
  }
  exports.getMyTaskDetailsInArray=getMyTaskDetailsInArray
  exports.getMyTaskDetails=getMyTaskDetails

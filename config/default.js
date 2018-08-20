@@ -3,7 +3,7 @@ module.exports=
     "dbServer": {
       "host": "localhost",
       "port": 27017,
-      "dbName": "taskDetails",
+      "dbName": "tasks",
       "protocol": "mongodb://"
     },
     "nodeServer": {

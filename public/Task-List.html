@@ -36,18 +36,7 @@
 		jQuery("#taskList").DataTable({
 			"processing":true,
         "serverSide": true,
-        'ajax' : {
-                   url : '/allInArray',
-                   method : 'get',
-                   dataType : 'json',
-                  contentType : 'application/json',       
-            success : function(tasks){
-                          var getData=JSON.stringify(tasks);
-                           console.log("Get data from mongodb: "+getData);
-                           alert("data",getData)
-                            jQuery("#taskList").append(getData);
-			            }
-	                }
+        "ajax":'/allInArray'
 	    });
 	});  
 </script>

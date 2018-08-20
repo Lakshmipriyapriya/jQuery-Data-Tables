@@ -11,4 +11,5 @@ router.post('/',function(req,res,next){
 router.get('/all',function(req,res){
 	tasks.getMyTaskDetails(req,res);
 });
+
 module.exports =router;
