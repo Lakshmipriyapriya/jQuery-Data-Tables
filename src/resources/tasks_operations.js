@@ -6,7 +6,8 @@ var createMyTaskDetails= function (req, res) {
 	var tasks = new Task({
 			title : req.body.title ,
 			 description : req.body.description,
-			 status : req.body.status
+			 status : req.body.status,
+			 createdOn:req.body.createdOn
 		});
 		
 	return tasks.save(function (err) {
@@ -52,7 +53,7 @@ var getMyTaskDetailsInArray = function (req,res){
 	return Task.find(function(error,tasks){
 		idForOperation = tasks._id;
 		var getDataFromDb=tasks.map (function getAllDetails(tasks,index){
-			var taskData=[tasks.title,tasks.description,tasks.status];
+			var taskData=[tasks.title,tasks.description,tasks.status,tasks.createdOn];
 			return taskData;
 		});
 
